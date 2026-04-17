@@ -3,12 +3,9 @@
 /* Variables */
 /*Variabler de deklareres i toppen af vores stylesheet og de er globale. Variabler defineret i blokke ({}) er normalvis lokale og kan kun tilgås inde i blokken.*/
 /* Mixin */
-* {
+body {
   box-sizing: border-box;
   margin: 0;
-}
-
-body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   padding: 0;
   background-color: #f0f0f0;
@@ -50,4 +47,44 @@ img {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-auto-rows: minmax(50px, auto);
+}
+
+header {
+  grid-column: 1/6;
+  background-color: #ffffff;
+  border-bottom: 4px solid #388071;
+}
+
+nav {
+  height: 4em;
+  padding: 1em;
+  /* $justify og $align er parametre/variabler, som kan aendres, naar vores mixin kaldes */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* We're calling the mixin! and the variable is changed */
+}
+nav img {
+  width: 70px;
+}
+nav #bars {
+  display: none;
+}
+nav ul {
+  /* $justify og $align er parametre/variabler, som kan aendres, naar vores mixin kaldes */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style-type: none;
+}
+nav a {
+  color: #333;
+  padding: 0.5em;
+  margin: 0.5em;
+  font-size: 20px;
+  text-decoration: none;
+  font-weight: bold;
+}
+nav a:hover, nav .active {
+  color: #388071;
 }/*# sourceMappingURL=style.css.map */
